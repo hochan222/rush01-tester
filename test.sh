@@ -10,6 +10,7 @@ LIGHT_SKYBLUE_COLOR="\033[36m\033[01m"
 
 BRACKET_COLOR="\033[90m"
 SUCCESS_COLOR="\033[32m"
+LIGHT_SUCCESS_COLOR="\033[32m\033[01m"
 FAIL_COLOR="\033[91m"
 # Background color
 SUCCESS_BG="\033[42;1;37m"
@@ -17,7 +18,7 @@ FAIL_BG="\033[41;5;11m"
 CLEAR_COLOR="\033[0m"
 
 # It is exception handling from number 11.
-RUSH_GENERAL_TESTCASE=50
+RUSH_GENERAL_TESTCASE=55
 SUCCESS=0
 FAIL=0
 
@@ -103,29 +104,28 @@ function evaluation {
 	local input
 	mkdir -p output
 
+	echo "\n${LIGHT_SUCCESS_COLOR}================================="
+	echo "${LIGHT_BLUE_COLOR}GENERAL TESTCASES"
+	echo "${LIGHT_SUCCESS_COLOR}=================================${CLEAR_COLOR}\n"
+
 	for i in `seq 0 10`
 	do
 		input=$(<input/${i})
 		./rush01 "$input" > ./output/${i}
 		diff -u ./output/${i} ./maps/${i} >> result
-		isSuccess "Input ${input}, File: ${i}"
+		isSuccess "File: ${i}, Input ${input}"
 	done
-	echo "exception handling"
+
+	echo "\n${LIGHT_SUCCESS_COLOR}================================="
+	echo "${LIGHT_BLUE_COLOR}EXCEPTION HANDLING"
+	echo "${LIGHT_SUCCESS_COLOR}=================================${CLEAR_COLOR}\n"
+
 	for i in `seq 11 ${RUSH_GENERAL_TESTCASE}`
 	do
 		input=$(<input/${i})
-		command "./rush01 '$input' > ./output/${i}"
-		timeout 3.5s "$command"
+		(./rush01 "$input" > ./output/${i})  & sleep 0.2; kill $! 2> /dev/null || :
 		diff -u ./output/${i} ./maps/error >> result
-		isSuccess "Input $input, File: ${i}"
-		# echo $?
-		# if [ $? = 0 ]
-		# then
-		# 	diff -u ./output/${i} ./maps/error >> result
-		# 	isSuccess "Input $input, File: ${i}"
-		# else
-		# 	isSuccess "Input $input, File: ${i}"
-    	# fi
+		isSuccess "File: ${i}, Input $input"
 	done
 }
 
