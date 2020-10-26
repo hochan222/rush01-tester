@@ -9,9 +9,11 @@ Use it for problem solving and peer evaluation.
 [How to use](#사용방법)  
 If you have a test case you want to add, please leave it as a PR or Issue! It's always welcome :)  
 
-<!-- ![test](https://user-images.githubusercontent.com/22424891/96735404-82aa1800-13f6-11eb-9fd7-b7fb84210043.gif)  
+<img src="https://user-images.githubusercontent.com/22424891/97175504-f70a0000-17d6-11eb-8c77-a8bdcd4707d6.gif" height="300px" />
 
-### 사용방법
+<img src="https://user-images.githubusercontent.com/22424891/97175518-fa04f080-17d6-11eb-9d25-e0287ba6cb54.gif" height="300px" /> 
+
+<!-- ### 사용방법
 
 ```
 .
@@ -93,7 +95,7 @@ customEvaluation rush00 0 -1 0
 
 ### norminette
 
-> norminette -R CheckForbiddenSourceHeader -->
+> norminette -R CheckForbiddenSourceHeader --> -->
 
 ### Patch Note
 
