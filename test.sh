@@ -100,9 +100,21 @@ ${CLEAR_COLOR}"
 	fi
 }
 
+function argumentEvaluation {
+	echo "\n${LIGHT_SUCCESS_COLOR}================================="
+	echo "${LIGHT_BLUE_COLOR}ARGUMENT EVALUATION"
+	echo "${LIGHT_SUCCESS_COLOR}=================================${CLEAR_COLOR}\n"
+
+	./rush01 "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2" ""
+	./rush01 "" "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
+	./rush01 "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2" "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
+}
+
 function evaluation {
 	local input
 	mkdir -p output
+
+	argumentEvaluation
 
 	echo "\n${LIGHT_SUCCESS_COLOR}================================="
 	echo "${LIGHT_BLUE_COLOR}GENERAL TESTCASES"
