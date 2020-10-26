@@ -16,6 +16,10 @@ If you have a test case you want to add, please leave it as a PR or Issue! It's 
 
 ### 사용방법
 
+```sh
+git clone https://github.com/hochan222/rush01-tester.git && cd rush01-tester && sh test.sh
+```
+
 ```
 .
 ├── *.h
@@ -66,6 +70,10 @@ The [Rush00-Tester](https://github.com/hochan222/rush00-tester) contribution ref
 - ADD 10 exceptions (66) | 2020.10
 - FIX [16, 42, 43, 46] exceptions | 2020.10
 - ADD 8 argument exceptions (8) | 2020.10
+
+### Contributor
+
+[<img src="https://avatars3.githubusercontent.com/u/22424891?s=60&v=4" alt="@hochan222" style="border-radius: 50%;" />](https://github.com/hochan222)
 
 - - -
 기타 문의 사항은 Slack ID holee로 DM 주세요!
