@@ -49,6 +49,17 @@ sh test.sh
 
 <img src="https://user-images.githubusercontent.com/22424891/97179095-c5dffe80-17db-11eb-9261-9ac9e238880c.png" height="200px" />
 
+### How To Contribute
+
+Add your example to the input, maps folder and just modify <code>RUSH_GENERAL_TESTCASE</code>
+variable in test.sh for next number.  
+
+If you want to contribute, please send me a DM or email first!  
+Rush01-Tester is relatively easy to contribute, so I will not write a separate method.  
+
+The rush00-tester contribution reference is well written, so please check it out together.  
+[Rush00-Tester](https://github.com/hochan222/rush00-tester)  
+
 ### Patch Note
 
 - Add 55 exceptions | 2020.10
