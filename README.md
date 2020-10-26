@@ -47,7 +47,7 @@ sh test.sh
 
 3. __A diff record is created in the generated result file.__
 
-<img src="https://user-images.githubusercontent.com/22424891/96731034-c8b0ad00-13f1-11eb-81e8-c896fc0d6cd5.png" height="200px" />
+<img src="https://user-images.githubusercontent.com/22424891/97179095-c5dffe80-17db-11eb-9261-9ac9e238880c.png" height="200px" />
 
 ### Patch Note
 
