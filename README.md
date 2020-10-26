@@ -1,5 +1,5 @@
 # rush01-tester
-**[Rush00 Tester (piscine) | 2020.10](https://github.com/hochan222/rush00-tester)**
+**[Rush00 Tester (piscine) | 2020.10](https://github.com/hochan222/rush00-tester)**  
 **[Rush01 Tester (piscine) | 2020.10](https://github.com/hochan222/rush01-tester)**
 
 문제 풀 때와 동료평가시 활용해보세요.   
