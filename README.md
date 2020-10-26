@@ -62,9 +62,10 @@ The [Rush00-Tester](https://github.com/hochan222/rush00-tester) contribution ref
 
 ### Patch Note
 
-- Add 55 exceptions (55) | 2020.10
-- ADD 10 exceptions (65) | 2020.10
+- Add 56 exceptions (56) | 2020.10
+- ADD 10 exceptions (66) | 2020.10
 - FIX [16, 42, 43, 46] exceptions | 2020.10
+- ADD 8 argument exceptions (8) | 2020.10
 
 - - -
 기타 문의 사항은 Slack ID holee로 DM 주세요!

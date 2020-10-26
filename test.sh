@@ -17,8 +17,9 @@ SUCCESS_BG="\033[42;1;37m"
 FAIL_BG="\033[41;5;11m"
 CLEAR_COLOR="\033[0m"
 
-# It is exception handling from number 11.
+# RUSH_GENERAL_TESTCASE is exception handling from number 11.
 RUSH_GENERAL_TESTCASE=65
+RUSH_ARGUMENT_TESTCASE=7
 SUCCESS=0
 FAIL=0
 
@@ -87,7 +88,7 @@ function resultPrompt {
 	echo ""
 	echo "${BRACKET_COLOR}[${SUCCESS_COLOR}SUCCESS: ${SUCCESS} ${BRACKET_COLOR}/${FAIL_COLOR} FAIL: ${FAIL}${BRACKET_COLOR}]${CLEAR_COLOR}"
 
-	if [ ${SUCCESS} -eq $((${RUSH_GENERAL_TESTCASE}+1)) ]
+	if [ ${SUCCESS} -eq $((${RUSH_GENERAL_TESTCASE} + ${RUSH_ARGUMENT_TESTCASE} + 2)) ]
 	then
 		echo "${SUCCESS_COLOR}
     ____  __  _______ __  ______ ___   _____ __  ______________________________
@@ -100,14 +101,25 @@ ${CLEAR_COLOR}"
 	fi
 }
 
-function argumentEvaluation {
+function sectionPrompt {
 	echo "\n${LIGHT_SUCCESS_COLOR}================================="
-	echo "${LIGHT_BLUE_COLOR}ARGUMENT EVALUATION"
+	echo "${LIGHT_BLUE_COLOR}$1"
 	echo "${LIGHT_SUCCESS_COLOR}=================================${CLEAR_COLOR}\n"
+}
 
-	./rush01 "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2" ""
-	./rush01 "" "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
-	./rush01 "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2" "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
+function argumentEvaluation {
+	local input
+	mkdir -p output/argument
+
+	sectionPrompt "ARGUMENT EVALUATION"
+
+	for i in `seq 0 ${RUSH_ARGUMENT_TESTCASE}`
+	do
+		input=$(<input/argument/${i})
+		(./rush01 '$input' > ./output/argument/${i})  & sleep 0.2; kill $! 2> /dev/null || :
+		diff -u ./output/argument/${i} ./maps/error >> result
+		isSuccess "File: ${i}, Input $input"
+	done
 }
 
 function evaluation {
@@ -115,10 +127,7 @@ function evaluation {
 	mkdir -p output
 
 	argumentEvaluation
-
-	echo "\n${LIGHT_SUCCESS_COLOR}================================="
-	echo "${LIGHT_BLUE_COLOR}GENERAL TESTCASES"
-	echo "${LIGHT_SUCCESS_COLOR}=================================${CLEAR_COLOR}\n"
+	sectionPrompt "GENERAL TESTCASES"
 
 	for i in `seq 0 10`
 	do
@@ -128,9 +137,7 @@ function evaluation {
 		isSuccess "File: ${i}, Input ${input}"
 	done
 
-	echo "\n${LIGHT_SUCCESS_COLOR}================================="
-	echo "${LIGHT_BLUE_COLOR}EXCEPTION HANDLING"
-	echo "${LIGHT_SUCCESS_COLOR}=================================${CLEAR_COLOR}\n"
+	sectionPrompt "EXCEPTION HANDLING"
 
 	for i in `seq 11 ${RUSH_GENERAL_TESTCASE}`
 	do
