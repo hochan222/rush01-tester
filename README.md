@@ -13,22 +13,16 @@ If you have a test case you want to add, please leave it as a PR or Issue! It's 
 
 <img src="https://user-images.githubusercontent.com/22424891/97175518-fa04f080-17d6-11eb-9d25-e0287ba6cb54.gif" height="300px" /> 
 
-<img width="383" alt="Screen Shot 2020-10-26 at 6 06 45 PM" src="https://user-images.githubusercontent.com/22424891/97175812-6a137680-17d7-11eb-84a9-2d82a7e2199e.png">
-
-<!-- ### 사용방법
+### 사용방법
 
 ```
 .
-├── ft_putchar.c
-├── rush00.c
-├── rush01.c
-├── rush02.c
-├── rush03.c
-├── rush04.c
-├── _rush00-tester
-|   ├── _includes
+├── *.h
+├── *.c
+├── rush01
+├── _rush01-tester
+|   ├── _input
 |   ├── _maps
-|   ├── _src
 |   ├── .gitignore
 |   ├── LICENSE
 |   └── README.md
@@ -37,72 +31,26 @@ If you have a test case you want to add, please leave it as a PR or Issue! It's 
 └── ...
 ```
 
-다음 파일들이 있는 폴더 안에 <code>git clone</code> 해주세요.  
-<code>git clone</code> in the folder containing the following files.
+1. __Download a git clone to the folder where your rush01 executable is located.__  
 
->ft_putchar.c rush00.c rush01.c rush02.c rush03.c rush04.c
+If there is no rush01 file, the following error will occur.  
 
-```bash
-git clone https://github.com/hochan222/rush00-tester.git
+<img width="383" alt="Screen Shot 2020-10-26 at 6 06 45 PM" src="https://user-images.githubusercontent.com/22424891/97175812-6a137680-17d7-11eb-84a9-2d82a7e2199e.png">
 
-cd rush00-tester
+2. __Run the test.sh file__
+
+```
+cd rush01-tester
 sh test.sh
 ```
 
-> 생성된 result 파일에 diff 기록이 생성됩니다.
-> A diff record is created in the generated result file.
+3. __A diff record is created in the generated result file.__
 
 <img src="https://user-images.githubusercontent.com/22424891/96731034-c8b0ad00-13f1-11eb-81e8-c896fc0d6cd5.png" height="200px" />
 
-### How to contribute to rush00-tester
-
-1. Please refer to the guide at the bottom of the test.sh file first.
-    - There are function descriptions and how to use them.
-    - Function: customEvaluation, customEcho
-```sh
-# * < Function: customEvaluation >
-# * 
-# * When adding a test case, use this function to add it.
-# * 
-# * @param	string	The name of rush file to run.
-# * @param	int		The first argument i in the rush(i, j) function.
-# * @param	int		The second argument j in the rush(i, j) function.
-# * @param	int		The name of the file to be saved. 
-# * 				It increases in order from 0, and add 1 value from the previous test case.
-# * @return	void
-# *
-# * < Function: customEcho >
-# *
-# *	This function is used to display test cases by dividing them into sections.
-# *	
-# * @param	string	The name of rush file to run.
-# * @param	string	Please write the section to be printed
-# * @return	void
-```
-2. Please check if there are any test cases that overlap with previous test cases.
-
-```sh
-# =================
-# < Custom Rush0X >
-# =================
-```
-3. Add the test case to the appropriately named comment location. The comments are as above. Here is an additional example:
-```sh
-customEcho rush00 considerNegative
-customEvaluation rush00 0 -1 0
-```
-4. Add the test case output file to the maps/rush0X/custom folder at the last number.
-5. Please send PR including explanation and result screen.
-6. For other inquiries, please slack with holee. Thank you. :)
-
-### norminette
-
-> norminette -R CheckForbiddenSourceHeader --> -->
-
 ### Patch Note
 
-<!-- - Extend 121 testcases (11 x 11) | 2020.10
-- Add negative testcases | 2020.10
+- Add 55 exceptions | 2020.10
 
 - - -
-기타 문의 사항은 Slack ID holee로 DM 주세요! -->
+기타 문의 사항은 Slack ID holee로 DM 주세요!
