@@ -18,7 +18,7 @@ FAIL_BG="\033[41;5;11m"
 CLEAR_COLOR="\033[0m"
 
 # It is exception handling from number 11.
-RUSH_GENERAL_TESTCASE=55
+RUSH_GENERAL_TESTCASE=65
 SUCCESS=0
 FAIL=0
 

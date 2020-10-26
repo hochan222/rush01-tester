@@ -62,7 +62,8 @@ The [Rush00-Tester](https://github.com/hochan222/rush00-tester) contribution ref
 
 ### Patch Note
 
-- Add 55 exceptions | 2020.10
+- Add 55 exceptions (55) | 2020.10
+- ADD 10 exceptions (65) | 2020.10
 
 - - -
 기타 문의 사항은 Slack ID holee로 DM 주세요!
