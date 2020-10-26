@@ -55,6 +55,8 @@ sh test.sh
 
 ### How To Contribute
 
+__Contributors will register below.__
+
 Add your example to the input, maps folder and just modify <code>RUSH_GENERAL_TESTCASE</code>
 variable in test.sh for next number.  
 Please send PR including explanation and result screen.  
@@ -73,7 +75,14 @@ The [Rush00-Tester](https://github.com/hochan222/rush00-tester) contribution ref
 
 ### Contributor
 
-[<img src="https://avatars3.githubusercontent.com/u/22424891?s=60&v=4" alt="@hochan222" style="border-radius: 50%;" />](https://github.com/hochan222)
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/hochan222"><img src="https://avatars3.githubusercontent.com/u/22424891?s=100&v=4" alt="@hochan222" /><br /><sub><b>holee</b></sub></a>
+    <br />
+    <!-- <a href="#question-kentcdodds" title="Answering Questions">💬</a> -->
+    </td>
+    </tr>
+</table>
 
 - - -
 기타 문의 사항은 Slack ID holee로 DM 주세요!
