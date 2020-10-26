@@ -116,7 +116,7 @@ function argumentEvaluation {
 	for i in `seq 0 ${RUSH_ARGUMENT_TESTCASE}`
 	do
 		input=$(<input/argument/${i})
-		(./rush01 '$input' > ./output/argument/${i})  & sleep 0.2; kill $! 2> /dev/null || :
+		(./rush01 '$input' > ./output/argument/${i})  & sleep 0.3; kill $! 2> /dev/null || :
 		diff -u ./output/argument/${i} ./maps/error >> result
 		isSuccess "File: ${i}, Input $input"
 	done
