@@ -113,6 +113,9 @@ function argumentEvaluation {
 
 	sectionPrompt "ARGUMENT EVALUATION"
 
+	# Temporarily First Intermittent Error Handling
+	./rush01 "a" > ./output/argument/0
+	
 	for i in `seq 0 ${RUSH_ARGUMENT_TESTCASE}`
 	do
 		input=$(<input/argument/${i})
