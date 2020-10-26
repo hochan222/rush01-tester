@@ -53,12 +53,12 @@ sh test.sh
 
 Add your example to the input, maps folder and just modify <code>RUSH_GENERAL_TESTCASE</code>
 variable in test.sh for next number.  
+Please send PR including explanation and result screen.  
 
 If you want to contribute, please send me a DM or email first!  
 Rush01-Tester is relatively easy to contribute, so I will not write a separate method.  
 
-The rush00-tester contribution reference is well written, so please check it out together.  
-[Rush00-Tester](https://github.com/hochan222/rush00-tester)  
+The [Rush00-Tester](https://github.com/hochan222/rush00-tester) contribution reference is well written, so please check it out together.  
 
 ### Patch Note
 
