@@ -13,6 +13,8 @@ If you have a test case you want to add, please leave it as a PR or Issue! It's 
 
 <img src="https://user-images.githubusercontent.com/22424891/97175518-fa04f080-17d6-11eb-9d25-e0287ba6cb54.gif" height="300px" /> 
 
+<img width="383" alt="Screen Shot 2020-10-26 at 6 06 45 PM" src="https://user-images.githubusercontent.com/22424891/97175812-6a137680-17d7-11eb-84a9-2d82a7e2199e.png">
+
 <!-- ### 사용방법
 
 ```
