@@ -1,2 +1,2 @@
 cd ..
-norminette -R CheckForbiddenSourceHeader
+norminette
