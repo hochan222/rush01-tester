@@ -22,7 +22,7 @@ RUSH_GENERAL_TESTCASE=65
 RUSH_ARGUMENT_TESTCASE=7
 BLANK_EXCEPTION_HANDLING=25
 FORMAT_EXCEPTION_HANDLING=25
-N_X_N_EXCEPTION_HANDLING=0
+N_X_N_EXCEPTION_HANDLING=5
 SUCCESS=0
 FAIL=0
 
@@ -145,16 +145,6 @@ function evaluation {
 		diff -u ./output/${i} ./maps/${i} >> result
 		isSuccess "File: ${i}, Input \"${input}\""
 	done
-
-	# sectionPrompt "EXCEPTION HANDLING"
-
-	# for i in `seq 11 ${RUSH_GENERAL_TESTCASE}`
-	# do
-	# 	input=$(<input/${i})
-	# 	(./rush01 "$input" > ./output/${i})  & sleep 0.2; kill $! 2> /dev/null || :
-	# 	diff -u ./output/${i} ./maps/error >> result
-	# 	isSuccess "File: ${i}, Input \"$input\""
-	# done
 
 	sectionPrompt "BLANK EXCEPTION HANDLING"
 

@@ -76,10 +76,11 @@ The [Rush00-Tester](https://github.com/hochan222/rush00-tester) contribution ref
 - ADD 8 argument exceptions (8) | 2020.10
 - FIX input fomat "number" => number | 2020.10
 - ADD blank exceptions (18) | 2020.10
-- ADD format exceptions (15) | 2020.10
-- ADD blank exceptions (25) | 2020.10
+- ADD format exceptions (16) | 2020.10
+- ADD blank exceptions (26) | 2020.10
 - FIX diff route | 2020.10
-- ADD 10 format exceptions (25) | 2020.10
+- ADD 10 format exceptions (26) | 2020.10
+- ADD 5 NxN exceptions (6) | 2020.10
 
 ### Contributor
 
