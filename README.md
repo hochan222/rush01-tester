@@ -77,6 +77,8 @@ The [Rush00-Tester](https://github.com/hochan222/rush00-tester) contribution ref
 - FIX input fomat "number" => number | 2020.10
 - ADD blank exceptions (18) | 2020.10
 - ADD format exceptions (15) | 2020.10
+- ADD blank exceptions (25) | 2020.10
+- FIX diff route | 2020.10
 
 ### Contributor
 
