@@ -91,7 +91,7 @@ function resultPrompt {
 	echo ""
 	echo "${BRACKET_COLOR}[${SUCCESS_COLOR}SUCCESS: ${SUCCESS} ${BRACKET_COLOR}/${FAIL_COLOR} FAIL: ${FAIL}${BRACKET_COLOR}]${CLEAR_COLOR}"
 
-	if [ ${SUCCESS} -eq $((${RUSH_GENERAL_TESTCASE} + ${RUSH_ARGUMENT_TESTCASE} + ${BLANK_EXCEPTION_HANDLING} + 3)) ]
+	if [ ${SUCCESS} -eq $((${RUSH_GENERAL_TESTCASE} + ${RUSH_ARGUMENT_TESTCASE} + ${BLANK_EXCEPTION_HANDLING} + ${FORMAT_EXCEPTION_HANDLING} + ${N_X_N_EXCEPTION_HANDLING} + 5)) ]
 	then
 		echo "${SUCCESS_COLOR}
     ____  __  _______ __  ______ ___   _____ __  ______________________________
