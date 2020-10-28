@@ -22,6 +22,7 @@ RUSH_GENERAL_TESTCASE=65
 RUSH_ARGUMENT_TESTCASE=7
 BLANK_EXCEPTION_HANDLING=25
 FORMAT_EXCEPTION_HANDLING=25
+N_X_N_EXCEPTION_HANDLING=0
 SUCCESS=0
 FAIL=0
 
@@ -132,6 +133,7 @@ function evaluation {
 	mkdir -p output/blank
 	mkdir -p output/format
 	mkdir -p output/argument
+	mkdir -p output/n_x_n
 
 	argumentEvaluation
 	sectionPrompt "GENERAL TESTCASES"
@@ -171,6 +173,16 @@ function evaluation {
 		input=$(<input/format/${i})
 		(./rush01 "$input" > ./output/format/${i})  & sleep 0.2; kill $! 2> /dev/null || :
 		diff -u ./output/format/${i} ./maps/format/${i} >> result
+		isSuccess "File: ${i}, Input \"$input\""
+	done
+
+	sectionPrompt "NxN EXCEPTION HANDLING"
+
+	for i in `seq 0 ${N_X_N_EXCEPTION_HANDLING}`
+	do
+		input=$(<input/n_x_n/${i})
+		(./rush01 "$input" > ./output/n_x_n/${i})  & sleep 0.2; kill $! 2> /dev/null || :
+		diff -u ./output/n_x_n/${i} ./maps/n_x_n/${i} >> result
 		isSuccess "File: ${i}, Input \"$input\""
 	done
 }
