@@ -90,6 +90,10 @@ The [Rush00-Tester](https://github.com/hochan222/rush00-tester) contribution ref
     <br />
     <!-- <a href="#question-kentcdodds" title="Answering Questions">💬</a> -->
     </td>
+    <td align="center"><a href="https://github.com/Err0rCode7"><img src="https://avatars2.githubusercontent.com/u/48249549?s=100&v=4" alt="@hochan222" /><br /><sub><b>Err0rCode7</b></sub></a>
+    <br />
+    <a href="https://github.com/hochan222/rush01-tester/issues/1" title="Answering Questions">💬</a>
+    </td>
     </tr>
 </table>
 
