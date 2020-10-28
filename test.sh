@@ -21,7 +21,7 @@ CLEAR_COLOR="\033[0m"
 RUSH_GENERAL_TESTCASE=65
 RUSH_ARGUMENT_TESTCASE=7
 BLANK_EXCEPTION_HANDLING=25
-FORMAT_EXCEPTION_HANDLING=15
+FORMAT_EXCEPTION_HANDLING=25
 SUCCESS=0
 FAIL=0
 
@@ -144,15 +144,15 @@ function evaluation {
 		isSuccess "File: ${i}, Input \"${input}\""
 	done
 
-	sectionPrompt "EXCEPTION HANDLING"
+	# sectionPrompt "EXCEPTION HANDLING"
 
-	for i in `seq 11 ${RUSH_GENERAL_TESTCASE}`
-	do
-		input=$(<input/${i})
-		(./rush01 "$input" > ./output/${i})  & sleep 0.2; kill $! 2> /dev/null || :
-		diff -u ./output/${i} ./maps/error >> result
-		isSuccess "File: ${i}, Input \"$input\""
-	done
+	# for i in `seq 11 ${RUSH_GENERAL_TESTCASE}`
+	# do
+	# 	input=$(<input/${i})
+	# 	(./rush01 "$input" > ./output/${i})  & sleep 0.2; kill $! 2> /dev/null || :
+	# 	diff -u ./output/${i} ./maps/error >> result
+	# 	isSuccess "File: ${i}, Input \"$input\""
+	# done
 
 	sectionPrompt "BLANK EXCEPTION HANDLING"
 
