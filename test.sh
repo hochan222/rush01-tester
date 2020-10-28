@@ -21,6 +21,7 @@ CLEAR_COLOR="\033[0m"
 RUSH_GENERAL_TESTCASE=65
 RUSH_ARGUMENT_TESTCASE=7
 BLANK_EXCEPTION_HANDLING=18
+FORMAT_EXCEPTION_HANDLING=15
 SUCCESS=0
 FAIL=0
 
@@ -129,6 +130,7 @@ function evaluation {
 	local input
 	mkdir -p output
 	mkdir -p output/blank
+	mkdir -p output/format
 	mkdir -p output/argument
 
 	argumentEvaluation
@@ -159,6 +161,16 @@ function evaluation {
 		input=$(<input/blank/${i})
 		(./rush01 "$input" > ./output/blank/${i})  & sleep 0.2; kill $! 2> /dev/null || :
 		diff -u ./output/blank/${i} ./output/blank/${i} >> result
+		isSuccess "File: ${i}, Input \"$input\""
+	done
+
+	sectionPrompt "FORMAT EXCEPTION HANDLING"
+
+	for i in `seq 0 ${FORMAT_EXCEPTION_HANDLING}`
+	do
+		input=$(<input/format/${i})
+		(./rush01 "$input" > ./output/format/${i})  & sleep 0.2; kill $! 2> /dev/null || :
+		diff -u ./output/format/${i} ./output/format/${i} >> result
 		isSuccess "File: ${i}, Input \"$input\""
 	done
 }
