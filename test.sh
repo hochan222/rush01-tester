@@ -20,6 +20,7 @@ CLEAR_COLOR="\033[0m"
 # RUSH_GENERAL_TESTCASE is exception handling from number 11.
 RUSH_GENERAL_TESTCASE=65
 RUSH_ARGUMENT_TESTCASE=7
+BLANK_EXCEPTION_HANDLING=18
 SUCCESS=0
 FAIL=0
 
@@ -88,7 +89,7 @@ function resultPrompt {
 	echo ""
 	echo "${BRACKET_COLOR}[${SUCCESS_COLOR}SUCCESS: ${SUCCESS} ${BRACKET_COLOR}/${FAIL_COLOR} FAIL: ${FAIL}${BRACKET_COLOR}]${CLEAR_COLOR}"
 
-	if [ ${SUCCESS} -eq $((${RUSH_GENERAL_TESTCASE} + ${RUSH_ARGUMENT_TESTCASE} + 2)) ]
+	if [ ${SUCCESS} -eq $((${RUSH_GENERAL_TESTCASE} + ${RUSH_ARGUMENT_TESTCASE} + ${BLANK_EXCEPTION_HANDLING} + 3)) ]
 	then
 		echo "${SUCCESS_COLOR}
     ____  __  _______ __  ______ ___   _____ __  ______________________________
@@ -109,7 +110,6 @@ function sectionPrompt {
 
 function argumentEvaluation {
 	local input
-	mkdir -p output/argument
 
 	sectionPrompt "ARGUMENT EVALUATION"
 
@@ -121,13 +121,15 @@ function argumentEvaluation {
 		input=$(<input/argument/${i})
 		(./rush01 '$input' > ./output/argument/${i})  & sleep 0.3; kill $! 2> /dev/null || :
 		diff -u ./output/argument/${i} ./maps/error >> result
-		isSuccess "File: ${i}, Input $input"
+		isSuccess "File: ${i}, Input \"$input\""
 	done
 }
 
 function evaluation {
 	local input
 	mkdir -p output
+	mkdir -p output/blank
+	mkdir -p output/argument
 
 	argumentEvaluation
 	sectionPrompt "GENERAL TESTCASES"
@@ -137,7 +139,7 @@ function evaluation {
 		input=$(<input/${i})
 		./rush01 "$input" > ./output/${i}
 		diff -u ./output/${i} ./maps/${i} >> result
-		isSuccess "File: ${i}, Input ${input}"
+		isSuccess "File: ${i}, Input \"${input}\""
 	done
 
 	sectionPrompt "EXCEPTION HANDLING"
@@ -147,7 +149,17 @@ function evaluation {
 		input=$(<input/${i})
 		(./rush01 "$input" > ./output/${i})  & sleep 0.2; kill $! 2> /dev/null || :
 		diff -u ./output/${i} ./maps/error >> result
-		isSuccess "File: ${i}, Input $input"
+		isSuccess "File: ${i}, Input \"$input\""
+	done
+
+	sectionPrompt "BLANK EXCEPTION HANDLING"
+
+	for i in `seq 0 ${BLANK_EXCEPTION_HANDLING}`
+	do
+		input=$(<input/blank/${i})
+		(./rush01 "$input" > ./output/blank/${i})  & sleep 0.2; kill $! 2> /dev/null || :
+		diff -u ./output/blank/${i} ./output/blank/${i} >> result
+		isSuccess "File: ${i}, Input \"$input\""
 	done
 }
 
