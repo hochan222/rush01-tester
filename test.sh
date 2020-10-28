@@ -20,7 +20,7 @@ CLEAR_COLOR="\033[0m"
 # RUSH_GENERAL_TESTCASE is exception handling from number 11.
 RUSH_GENERAL_TESTCASE=65
 RUSH_ARGUMENT_TESTCASE=7
-BLANK_EXCEPTION_HANDLING=18
+BLANK_EXCEPTION_HANDLING=25
 FORMAT_EXCEPTION_HANDLING=15
 SUCCESS=0
 FAIL=0
@@ -160,7 +160,7 @@ function evaluation {
 	do
 		input=$(<input/blank/${i})
 		(./rush01 "$input" > ./output/blank/${i})  & sleep 0.2; kill $! 2> /dev/null || :
-		diff -u ./output/blank/${i} ./output/blank/${i} >> result
+		diff -u ./output/blank/${i} ./maps/blank/${i} >> result
 		isSuccess "File: ${i}, Input \"$input\""
 	done
 
@@ -170,7 +170,7 @@ function evaluation {
 	do
 		input=$(<input/format/${i})
 		(./rush01 "$input" > ./output/format/${i})  & sleep 0.2; kill $! 2> /dev/null || :
-		diff -u ./output/format/${i} ./output/format/${i} >> result
+		diff -u ./output/format/${i} ./maps/format/${i} >> result
 		isSuccess "File: ${i}, Input \"$input\""
 	done
 }
